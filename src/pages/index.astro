@@ -1,48 +1,82 @@
 ---
 import "../styles/global.css";
 
-const heroImage =
-  "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=2200&q=88";
+const heroTitle = ["Blumen", "Jelena"];
 
-const storyLayers = [
+const heroImage =
+  "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=2400&q=90";
+
+const petals = [
+  { x: 14, y: 18, size: 1.15, color: "#f2b8bd", turn: -18 },
+  { x: 28, y: 12, size: 0.82, color: "#f7d6a4", turn: 24 },
+  { x: 42, y: 20, size: 1.02, color: "#d96b74", turn: -34 },
+  { x: 57, y: 14, size: 0.7, color: "#c6d18a", turn: 19 },
+  { x: 72, y: 24, size: 1.3, color: "#f0a5ad", turn: 48 },
+  { x: 84, y: 15, size: 0.86, color: "#f5c267", turn: -27 },
+  { x: 18, y: 48, size: 0.76, color: "#d7a1c8", turn: 38 },
+  { x: 36, y: 59, size: 1.24, color: "#fff0d6", turn: -10 },
+  { x: 67, y: 56, size: 0.92, color: "#f2b8bd", turn: 31 },
+  { x: 91, y: 46, size: 1.1, color: "#d96b74", turn: -43 },
+  { x: 12, y: 76, size: 0.92, color: "#f5c267", turn: 29 },
+  { x: 49, y: 82, size: 1.05, color: "#c6d18a", turn: -25 },
+  { x: 77, y: 78, size: 0.78, color: "#fff0d6", turn: 13 },
+];
+
+const chapters = [
   {
-    label: "Zarte Blüten",
+    step: "01",
+    title: "Farbe finden",
+    text: "Jelena liest Anlass und Stimmung zuerst über Farbe: weich, mutig, ruhig oder festlich.",
     image:
-      "https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=900&q=85",
-    className: "bloom-layer--one",
+      "https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=900&q=88",
   },
   {
-    label: "Warme Farben",
+    step: "02",
+    title: "Form aufbauen",
+    text: "Blüten, Grün und Höhe werden so gesetzt, dass der Strauß lebendig wirkt und trotzdem hält.",
     image:
-      "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=900&q=85",
-    className: "bloom-layer--two",
+      "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=900&q=88",
   },
   {
-    label: "Frische Sträuße",
+    step: "03",
+    title: "Details setzen",
+    text: "Kleine Geschenkideen, Schleifen und Pflanzen machen aus frischen Blumen eine persönliche Geste.",
     image:
-      "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=900&q=85",
-    className: "bloom-layer--three",
+      "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=900&q=88",
+  },
+  {
+    step: "04",
+    title: "Moment übergeben",
+    text: "Am Ende zählt dieses leichte Gefühl: Der Strauß passt zum Menschen und zum Augenblick.",
+    image:
+      "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=900&q=88",
   },
 ];
 
-const offerings = [
+const moments = [
   {
     title: "Schnittblumen",
     text: "Frische Blumen für Alltag, Anlass und die kleinen Gesten dazwischen.",
     image:
-      "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=1100&q=88",
   },
   {
     title: "Topfpflanzen",
     text: "Grüne Begleiter mit Charakter, ausgewählt für Zuhause, Büro und Geschenk.",
     image:
-      "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=1100&q=88",
   },
   {
     title: "Geschenkideen",
     text: "Liebevoll kombinierte Details, die einen Strauß persönlich machen.",
     image:
-      "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=1100&q=88",
+  },
+  {
+    title: "Für jeden Anlass",
+    text: "Geburtstag, Dankeschön, Trauer, Hochzeit oder einfach ein schöner Freitag.",
+    image:
+      "https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=1100&q=88",
   },
 ];
 ---
@@ -59,7 +93,7 @@ const offerings = [
       name="description"
       content="Blumen Jelena e.U. in Linz: frische Blumen, Topfpflanzen und liebevolle Geschenkideen in der Raimundstraße 39."
     />
-    <meta name="theme-color" content="#1d3327" />
+    <meta name="theme-color" content="#17241b" />
     <title>Blumen Jelena | Blumenladen in Linz</title>
   </head>
   <body>
@@ -68,8 +102,8 @@ const offerings = [
         <span>BJ</span>
       </a>
       <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="#prozess">Prozess</a>
         <a href="#angebot">Angebot</a>
-        <a href="#atelier">Atelier</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
       <a class="header-cta" href="tel:+436765882700">+43 676 5882700</a>
@@ -78,9 +112,27 @@ const offerings = [
     <main>
       <section class="hero" style={`--hero-image: url("${heroImage}")`}>
         <div class="hero__media" aria-hidden="true"></div>
+        <div class="hero__veil" aria-hidden="true"></div>
+        <div class="petal-field" aria-hidden="true">
+          {petals.map((petal) => (
+            <span
+              class="petal"
+              style={`--x:${petal.x}%; --y:${petal.y}%; --size:${petal.size}rem; --petal-color:${petal.color}; --turn:${petal.turn}deg;`}
+            />
+          ))}
+        </div>
+
         <div class="hero__content">
-          <p class="eyebrow">Blumenladen in Linz</p>
-          <h1>Blumen Jelena</h1>
+          <p class="eyebrow hero__eyebrow">Raimundstraße 39 · Linz</p>
+          <h1 class="hero-title" aria-label="Blumen Jelena">
+            {heroTitle.map((word) => (
+              <span class="hero-title__word">
+                {[...word].map((letter) => (
+                  <span class="hero-char">{letter}</span>
+                ))}
+              </span>
+            ))}
+          </h1>
           <p class="hero__lead">
             Frische Blumen, sorgfältig gebundene Sträuße und liebevolle
             Geschenkideen für Momente, die bleiben.
@@ -90,96 +142,128 @@ const offerings = [
             <a class="button button--ghost" href="#kontakt">Besuchen</a>
           </div>
         </div>
-        <p class="hero__address">Raimundstraße 39, 4020 Linz</p>
+
+        <div class="hero__index" aria-hidden="true">
+          <span>Floristik</span>
+          <span>Pflanzen</span>
+          <span>Geschenke</span>
+        </div>
       </section>
 
-      <section class="intro" aria-labelledby="intro-title">
-        <div class="intro__inner">
-          <p class="eyebrow" data-reveal>Floristik mit Gefühl</p>
-          <h2 id="intro-title" data-reveal>
-            Ein moderner Auftritt für einen Laden, der Blumen persönlich nimmt.
+      <section class="manifesto" aria-labelledby="manifesto-title">
+        <div class="manifesto__number" data-reveal>39</div>
+        <div class="manifesto__copy">
+          <p class="eyebrow" data-reveal>Blumenladen mit Handschrift</p>
+          <h2 id="manifesto-title" data-reveal>
+            Ein Strauß soll nicht dekorieren. Er soll treffen.
           </h2>
           <p data-reveal>
-            Die Website soll nicht nur informieren, sondern die ruhige
-            Aufmerksamkeit eines guten Blumenladens spürbar machen: Farben,
-            Formen und kleine Details entfalten sich Schritt für Schritt.
+            Die neue Website übersetzt diese Sorgfalt in Bewegung: Schichten,
+            Rhythmus und kleine Übergänge, die sich wie ein gebundener Strauß
+            entfalten.
           </p>
         </div>
       </section>
 
-      <section class="story" aria-labelledby="story-title">
-        <div class="story__stage">
-          <div class="story__visual" aria-hidden="true">
-            {storyLayers.map((layer) => (
-              <div
-                class={`bloom-layer ${layer.className}`}
-                style={`--image: url("${layer.image}")`}
-                aria-label={layer.label}
-              />
-            ))}
-          </div>
-
-          <div class="story__copy">
-            <p class="eyebrow">Jelena bindet</p>
-            <h2 id="story-title">Jeder Strauß beginnt mit einem Moment.</h2>
-            <div class="story-card">
-              <span>01</span>
-              <h3>Ankommen</h3>
-              <p>
-                Ein kurzer Blick auf Farbe, Anlass und Stimmung genügt, und aus
-                einzelnen Blüten entsteht eine Richtung.
-              </p>
+      <section class="craft" id="prozess" aria-labelledby="craft-title">
+        <div class="craft__stage">
+          <div class="craft__visual" aria-hidden="true">
+            <div class="craft__meter">
+              <span class="craft__count-current">01</span>
+              <span class="craft__count-total">/04</span>
+              <span class="craft__progress"><span class="craft__progress-fill"></span></span>
             </div>
-            <div class="story-card">
-              <span>02</span>
-              <h3>Auswahlen</h3>
-              <p>
-                Frische Schnittblumen, Topfpflanzen und kleine Geschenkdetails
-                werden so kombiniert, dass nichts zufällig wirkt.
-              </p>
-            </div>
-            <div class="story-card">
-              <span>03</span>
-              <h3>Verschenken</h3>
-              <p>
-                Der fertige Strauß soll leicht aussehen, sorgfältig halten und
-                genau den richtigen Ton treffen.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="offerings" id="angebot" aria-labelledby="offerings-title">
-        <div class="section-heading" data-reveal>
-          <p class="eyebrow">Sortiment</p>
-          <h2 id="offerings-title">Frisch, persönlich, liebevoll gebunden.</h2>
-        </div>
+            <div class="bouquet">
+              <div class="bouquet__aura"></div>
+              <svg class="stem-drawing" viewBox="0 0 720 720" role="img" aria-label="Gezeichnete Blumenstiele">
+                <path class="stem-path" d="M365 650 C356 522 330 434 286 326 C255 250 252 196 283 124" />
+                <path class="stem-path" d="M365 650 C390 510 423 402 492 292 C540 216 548 160 518 96" />
+                <path class="stem-path" d="M365 650 C348 548 378 454 410 360 C439 274 425 207 370 145" />
+                <path class="stem-path" d="M365 650 C318 528 282 444 215 358 C161 288 139 218 160 150" />
+              </svg>
 
-        <div class="offering-grid">
-          {offerings.map((item) => (
-            <article class="offering-card" data-reveal>
-              <img src={item.image} alt="" loading="lazy" />
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
+              {chapters.map((chapter, index) => (
+                <figure
+                  class={`bloom-photo bloom-photo--${index + 1}`}
+                  style={`--image:url("${chapter.image}")`}
+                >
+                  <span>{chapter.step}</span>
+                </figure>
+              ))}
+
+              <div class="bouquet__seal">
+                <span>Blumen</span>
+                <strong>Jelena</strong>
               </div>
-            </article>
-          ))}
+            </div>
+          </div>
+
+          <div class="craft__content">
+            <p class="eyebrow">Der Ablauf</p>
+            <h2 id="craft-title">Der Strauß entsteht in vier ruhigen Bewegungen.</h2>
+            <div class="chapter-dots" aria-hidden="true">
+              {chapters.map((chapter, index) => (
+                <span data-chapter-dot={index} class={index === 0 ? "is-active" : ""}>
+                  {chapter.step}
+                </span>
+              ))}
+            </div>
+
+            <div class="craft__panels">
+              {chapters.map((chapter) => (
+                <article class="craft-panel">
+                  <span>{chapter.step}</span>
+                  <h3>{chapter.title}</h3>
+                  <p>{chapter.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="atelier" id="atelier" aria-labelledby="atelier-title">
-        <div class="atelier__media" data-reveal>
+      <section class="collection" id="angebot" aria-labelledby="collection-title">
+        <div class="collection__pin">
+          <div class="section-heading">
+            <p class="eyebrow" data-reveal>Sortiment</p>
+            <h2 id="collection-title" data-reveal>
+              Frisch, persönlich und mit einem klaren Gefühl für den Anlass.
+            </h2>
+          </div>
+
+          <div class="collection__viewport">
+            <div class="collection__track">
+              {moments.map((item, index) => (
+                <article class="moment-card" data-reveal>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <img src={item.image} alt="" loading="lazy" />
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div class="collection__bar" aria-hidden="true">
+            <span class="collection__bar-fill"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="visit" aria-labelledby="visit-title">
+        <div class="visit__image" data-reveal>
           <img
-            src="https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=1200&q=85"
-            alt="Blumen in warmem Licht"
+            src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=1500&q=88"
+            alt="Frische Blumen in einem Laden"
             loading="lazy"
           />
         </div>
-        <div class="atelier__content" data-reveal>
+        <div class="visit__copy" data-reveal>
           <p class="eyebrow">In der Raimundstraße</p>
-          <h2 id="atelier-title">Ein Ort für spontane Freude und geplante Gesten.</h2>
+          <h2 id="visit-title">Ein Ort für spontane Freude und geplante Gesten.</h2>
           <p>
             Ob ein Strauß für heute, eine Pflanze für das neue Zuhause oder ein
             kleines Geschenk: Blumen Jelena e.U. ist vor Ort in Linz erreichbar
@@ -226,25 +310,77 @@ const offerings = [
       ).matches;
 
       if (!prefersReducedMotion) {
-        gsap.from(".hero__content > *", {
+        const mm = gsap.matchMedia();
+
+        gsap.set(".hero-char", {
           autoAlpha: 0,
-          y: 38,
-          duration: 1,
-          stagger: 0.12,
-          ease: "power3.out",
+          yPercent: 115,
+          rotateX: -76,
+          transformOrigin: "50% 100%",
         });
 
-        gsap.from(".hero__media", {
-          scale: 1.08,
-          duration: 1.6,
-          ease: "power3.out",
+        gsap
+          .timeline({ defaults: { ease: "power4.out" } })
+          .to(".hero-char", {
+            autoAlpha: 1,
+            yPercent: 0,
+            rotateX: 0,
+            duration: 1.15,
+            stagger: { each: 0.032, from: "start" },
+          })
+          .from(
+            [".hero__eyebrow", ".hero__lead", ".hero__actions", ".hero__index"],
+            {
+              autoAlpha: 0,
+              y: 28,
+              duration: 0.9,
+              stagger: 0.1,
+            },
+            "-=0.55"
+          )
+          .from(
+            ".petal",
+            {
+              autoAlpha: 0,
+              scale: 0,
+              y: 42,
+              duration: 0.8,
+              stagger: 0.035,
+            },
+            "-=0.65"
+          );
+
+        gsap.to(".hero__media", {
+          scale: 1.16,
+          yPercent: 10,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+
+        gsap.utils.toArray<HTMLElement>(".petal").forEach((petal, index) => {
+          gsap.to(petal, {
+            x: gsap.utils.random(-34, 34),
+            y: gsap.utils.random(-42, 42),
+            rotate: gsap.utils.random(-36, 36),
+            duration: gsap.utils.random(4.5, 8),
+            delay: index * 0.04,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+          });
         });
 
         gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
           gsap.from(element, {
             autoAlpha: 0,
-            y: 34,
-            duration: 0.85,
+            y: 42,
+            clipPath: "inset(18% 0 0 0)",
+            duration: 0.95,
             ease: "power3.out",
             scrollTrigger: {
               trigger: element,
@@ -254,39 +390,133 @@ const offerings = [
           });
         });
 
-        const story = document.querySelector<HTMLElement>(".story");
-        const stage = document.querySelector<HTMLElement>(".story__stage");
-        const cards = gsap.utils.toArray<HTMLElement>(".story-card");
-        const layers = gsap.utils.toArray<HTMLElement>(".bloom-layer");
+        mm.add("(min-width: 901px)", () => {
+          const paths = gsap.utils.toArray<SVGPathElement>(".stem-path");
+          paths.forEach((path) => {
+            const length = path.getTotalLength();
+            path.style.strokeDasharray = `${length}`;
+            path.style.strokeDashoffset = `${length}`;
+          });
 
-        if (story && stage && cards.length > 0 && layers.length > 0) {
-          gsap.set(cards, { autoAlpha: 0, y: 34 });
-          gsap.set(cards[0], { autoAlpha: 1, y: 0 });
-          gsap.set(layers, { autoAlpha: 0.25, scale: 0.9, y: 54, rotate: -8 });
-          gsap.set(layers[0], { autoAlpha: 1, scale: 1, y: 0, rotate: -5 });
+          const panels = gsap.utils.toArray<HTMLElement>(".craft-panel");
+          const dots = gsap.utils.toArray<HTMLElement>("[data-chapter-dot]");
+          const count = document.querySelector<HTMLElement>(".craft__count-current");
+          const progressFill = document.querySelector<HTMLElement>(".craft__progress-fill");
 
-          const timeline = gsap.timeline({
+          const setChapter = (index: number) => {
+            const activeIndex = Math.max(0, Math.min(index, panels.length - 1));
+
+            if (count) {
+              count.textContent = String(activeIndex + 1).padStart(2, "0");
+            }
+
+            dots.forEach((dot, dotIndex) => {
+              dot.classList.toggle("is-active", dotIndex === activeIndex);
+            });
+          };
+
+          if (panels.length > 0) {
+            gsap.set(panels, { autoAlpha: 0, y: 42, filter: "blur(10px)" });
+            gsap.set(panels[0], { autoAlpha: 1, y: 0, filter: "blur(0px)" });
+          }
+
+          gsap.set(".bloom-photo", {
+            autoAlpha: 0,
+            scale: 0.68,
+            y: 70,
+            rotate: -18,
+            transformOrigin: "50% 80%",
+          });
+          gsap.set(".bloom-photo--1", {
+            autoAlpha: 1,
+            scale: 0.9,
+            y: 20,
+            rotate: -8,
+          });
+          gsap.set(".bouquet__seal", { autoAlpha: 0, y: 20, scale: 0.82 });
+
+          const craftTimeline = gsap.timeline({
             scrollTrigger: {
-              trigger: story,
+              trigger: ".craft",
               start: "top top",
               end: "bottom bottom",
               scrub: 1,
-              pin: stage,
+              pin: ".craft__stage",
               anticipatePin: 1,
+              onUpdate: (self) => {
+                const index = Math.min(panels.length - 1, Math.floor(self.progress * panels.length));
+                setChapter(index);
+                if (progressFill) {
+                  gsap.set(progressFill, { scaleX: self.progress });
+                }
+              },
             },
           });
 
-          timeline
-            .to(layers[0], { x: "-8%", y: "-6%", rotate: -12, duration: 0.7 }, 0)
-            .to(layers[1], { autoAlpha: 0.9, scale: 1, y: 0, rotate: 6, duration: 0.7 }, 0.2)
-            .to(cards[0], { autoAlpha: 0, y: -28, duration: 0.35 }, 0.65)
-            .to(cards[1], { autoAlpha: 1, y: 0, duration: 0.45 }, 0.76)
-            .to(layers[2], { autoAlpha: 0.95, scale: 1.03, y: -12, rotate: -2, duration: 0.75 }, 0.92)
-            .to(layers[0], { autoAlpha: 0.45, scale: 0.92, duration: 0.45 }, 1.12)
-            .to(cards[1], { autoAlpha: 0, y: -28, duration: 0.35 }, 1.45)
-            .to(cards[2], { autoAlpha: 1, y: 0, duration: 0.45 }, 1.56)
-            .to(layers, { x: 0, y: -24, rotate: 0, duration: 0.8, stagger: 0.08 }, 1.7);
-        }
+          craftTimeline
+            .to(paths, { strokeDashoffset: 0, duration: 1.05, stagger: 0.08 }, 0)
+            .to(".bouquet__aura", { rotate: 24, scale: 1.08, duration: 1.2 }, 0)
+            .to(".bloom-photo--1", { scale: 1, x: -24, y: -18, rotate: -14, duration: 0.85 }, 0.12)
+            .to(".bloom-photo--2", { autoAlpha: 1, scale: 1, x: 14, y: -8, rotate: 10, duration: 0.75 }, 0.74)
+            .to(panels[0], { autoAlpha: 0, y: -36, filter: "blur(10px)", duration: 0.32 }, 0.78)
+            .to(panels[1], { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: 0.44 }, 0.92)
+            .to(".bloom-photo--3", { autoAlpha: 1, scale: 1.04, x: -8, y: -20, rotate: -3, duration: 0.78 }, 1.52)
+            .to(".bloom-photo--1", { x: -54, y: -40, scale: 0.92, duration: 0.7 }, 1.56)
+            .to(panels[1], { autoAlpha: 0, y: -36, filter: "blur(10px)", duration: 0.32 }, 1.62)
+            .to(panels[2], { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: 0.44 }, 1.78)
+            .to(".bloom-photo--4", { autoAlpha: 1, scale: 1.02, x: 4, y: -16, rotate: 15, duration: 0.78 }, 2.38)
+            .to(".bouquet__seal", { autoAlpha: 1, scale: 1, y: 0, duration: 0.58 }, 2.62)
+            .to(panels[2], { autoAlpha: 0, y: -36, filter: "blur(10px)", duration: 0.32 }, 2.66)
+            .to(panels[3], { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: 0.44 }, 2.82)
+            .to(".bloom-photo", { y: -38, rotate: 0, duration: 0.75, stagger: 0.05 }, 3.14)
+            .to(".bouquet__aura", { rotate: 54, scale: 1.16, duration: 0.75 }, 3.14);
+
+          const viewport = document.querySelector<HTMLElement>(".collection__viewport");
+          const track = document.querySelector<HTMLElement>(".collection__track");
+          const bar = document.querySelector<HTMLElement>(".collection__bar-fill");
+
+          if (!viewport || !track || !bar) {
+            return () => {
+              craftTimeline.kill();
+            };
+          }
+
+          const getDistance = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
+
+          const tween = gsap.to(track, {
+            x: () => -getDistance(),
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".collection",
+              start: "top top",
+              end: () => `+=${getDistance() + window.innerHeight * 0.8}`,
+              pin: ".collection__pin",
+              scrub: 1,
+              invalidateOnRefresh: true,
+              onUpdate: (self) => {
+                gsap.set(bar, { scaleX: self.progress });
+              },
+            },
+          });
+
+          return () => {
+            craftTimeline.kill();
+            tween.kill();
+          };
+        });
+
+        gsap.to(".visit__image img", {
+          scale: 1.12,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".visit",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+
+        window.addEventListener("load", () => ScrollTrigger.refresh());
       }
     </script>
   </body>
