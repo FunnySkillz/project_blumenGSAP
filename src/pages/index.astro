@@ -1,17 +1,293 @@
 ---
+import "../styles/global.css";
 
+const heroImage =
+  "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=2200&q=88";
+
+const storyLayers = [
+  {
+    label: "Zarte Blüten",
+    image:
+      "https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=900&q=85",
+    className: "bloom-layer--one",
+  },
+  {
+    label: "Warme Farben",
+    image:
+      "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=900&q=85",
+    className: "bloom-layer--two",
+  },
+  {
+    label: "Frische Sträuße",
+    image:
+      "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=900&q=85",
+    className: "bloom-layer--three",
+  },
+];
+
+const offerings = [
+  {
+    title: "Schnittblumen",
+    text: "Frische Blumen für Alltag, Anlass und die kleinen Gesten dazwischen.",
+    image:
+      "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=900&q=85",
+  },
+  {
+    title: "Topfpflanzen",
+    text: "Grüne Begleiter mit Charakter, ausgewählt für Zuhause, Büro und Geschenk.",
+    image:
+      "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=900&q=85",
+  },
+  {
+    title: "Geschenkideen",
+    text: "Liebevoll kombinierte Details, die einen Strauß persönlich machen.",
+    image:
+      "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=900&q=85",
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="de-AT">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Blumen Jelena e.U. in Linz: frische Blumen, Topfpflanzen und liebevolle Geschenkideen in der Raimundstraße 39."
+    />
+    <meta name="theme-color" content="#1d3327" />
+    <title>Blumen Jelena | Blumenladen in Linz</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand-mark" href="/" aria-label="Blumen Jelena Startseite">
+        <span>BJ</span>
+      </a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="#angebot">Angebot</a>
+        <a href="#atelier">Atelier</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="header-cta" href="tel:+436765882700">+43 676 5882700</a>
+    </header>
+
+    <main>
+      <section class="hero" style={`--hero-image: url("${heroImage}")`}>
+        <div class="hero__media" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="eyebrow">Blumenladen in Linz</p>
+          <h1>Blumen Jelena</h1>
+          <p class="hero__lead">
+            Frische Blumen, sorgfältig gebundene Sträuße und liebevolle
+            Geschenkideen für Momente, die bleiben.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="tel:+436765882700">Anrufen</a>
+            <a class="button button--ghost" href="#kontakt">Besuchen</a>
+          </div>
+        </div>
+        <p class="hero__address">Raimundstraße 39, 4020 Linz</p>
+      </section>
+
+      <section class="intro" aria-labelledby="intro-title">
+        <div class="intro__inner">
+          <p class="eyebrow" data-reveal>Floristik mit Gefühl</p>
+          <h2 id="intro-title" data-reveal>
+            Ein moderner Auftritt für einen Laden, der Blumen persönlich nimmt.
+          </h2>
+          <p data-reveal>
+            Die Website soll nicht nur informieren, sondern die ruhige
+            Aufmerksamkeit eines guten Blumenladens spürbar machen: Farben,
+            Formen und kleine Details entfalten sich Schritt für Schritt.
+          </p>
+        </div>
+      </section>
+
+      <section class="story" aria-labelledby="story-title">
+        <div class="story__stage">
+          <div class="story__visual" aria-hidden="true">
+            {storyLayers.map((layer) => (
+              <div
+                class={`bloom-layer ${layer.className}`}
+                style={`--image: url("${layer.image}")`}
+                aria-label={layer.label}
+              />
+            ))}
+          </div>
+
+          <div class="story__copy">
+            <p class="eyebrow">Jelena bindet</p>
+            <h2 id="story-title">Jeder Strauß beginnt mit einem Moment.</h2>
+            <div class="story-card">
+              <span>01</span>
+              <h3>Ankommen</h3>
+              <p>
+                Ein kurzer Blick auf Farbe, Anlass und Stimmung genügt, und aus
+                einzelnen Blüten entsteht eine Richtung.
+              </p>
+            </div>
+            <div class="story-card">
+              <span>02</span>
+              <h3>Auswahlen</h3>
+              <p>
+                Frische Schnittblumen, Topfpflanzen und kleine Geschenkdetails
+                werden so kombiniert, dass nichts zufällig wirkt.
+              </p>
+            </div>
+            <div class="story-card">
+              <span>03</span>
+              <h3>Verschenken</h3>
+              <p>
+                Der fertige Strauß soll leicht aussehen, sorgfältig halten und
+                genau den richtigen Ton treffen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="offerings" id="angebot" aria-labelledby="offerings-title">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Sortiment</p>
+          <h2 id="offerings-title">Frisch, persönlich, liebevoll gebunden.</h2>
+        </div>
+
+        <div class="offering-grid">
+          {offerings.map((item) => (
+            <article class="offering-card" data-reveal>
+              <img src={item.image} alt="" loading="lazy" />
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="atelier" id="atelier" aria-labelledby="atelier-title">
+        <div class="atelier__media" data-reveal>
+          <img
+            src="https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=1200&q=85"
+            alt="Blumen in warmem Licht"
+            loading="lazy"
+          />
+        </div>
+        <div class="atelier__content" data-reveal>
+          <p class="eyebrow">In der Raimundstraße</p>
+          <h2 id="atelier-title">Ein Ort für spontane Freude und geplante Gesten.</h2>
+          <p>
+            Ob ein Strauß für heute, eine Pflanze für das neue Zuhause oder ein
+            kleines Geschenk: Blumen Jelena e.U. ist vor Ort in Linz erreichbar
+            und persönlich ansprechbar.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact" id="kontakt" aria-labelledby="contact-title">
+        <div class="contact__heading" data-reveal>
+          <p class="eyebrow">Kontakt</p>
+          <h2 id="contact-title">Blumen Jelena e.U.</h2>
+        </div>
+        <div class="contact__grid">
+          <a class="contact-tile" href="https://maps.google.com/?q=Raimundstra%C3%9Fe%2039%2C%204020%20Linz" data-reveal>
+            <span>Adresse</span>
+            <strong>Raimundstraße 39<br />4020 Linz</strong>
+          </a>
+          <a class="contact-tile" href="tel:+436765882700" data-reveal>
+            <span>Telefon</span>
+            <strong>+43 676 5882700</strong>
+          </a>
+          <a class="contact-tile" href="mailto:info@blumen-jelena.at" data-reveal>
+            <span>E-Mail</span>
+            <strong>info@blumen-jelena.at</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Blumen Jelena e.U. · Raimundstraße 39 · 4020 Linz</p>
+      <a href="mailto:info@blumen-jelena.at">info@blumen-jelena.at</a>
+    </footer>
+
+    <script>
+      import gsap from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (!prefersReducedMotion) {
+        gsap.from(".hero__content > *", {
+          autoAlpha: 0,
+          y: 38,
+          duration: 1,
+          stagger: 0.12,
+          ease: "power3.out",
+        });
+
+        gsap.from(".hero__media", {
+          scale: 1.08,
+          duration: 1.6,
+          ease: "power3.out",
+        });
+
+        gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
+          gsap.from(element, {
+            autoAlpha: 0,
+            y: 34,
+            duration: 0.85,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 82%",
+              once: true,
+            },
+          });
+        });
+
+        const story = document.querySelector<HTMLElement>(".story");
+        const stage = document.querySelector<HTMLElement>(".story__stage");
+        const cards = gsap.utils.toArray<HTMLElement>(".story-card");
+        const layers = gsap.utils.toArray<HTMLElement>(".bloom-layer");
+
+        if (story && stage && cards.length > 0 && layers.length > 0) {
+          gsap.set(cards, { autoAlpha: 0, y: 34 });
+          gsap.set(cards[0], { autoAlpha: 1, y: 0 });
+          gsap.set(layers, { autoAlpha: 0.25, scale: 0.9, y: 54, rotate: -8 });
+          gsap.set(layers[0], { autoAlpha: 1, scale: 1, y: 0, rotate: -5 });
+
+          const timeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: story,
+              start: "top top",
+              end: "bottom bottom",
+              scrub: 1,
+              pin: stage,
+              anticipatePin: 1,
+            },
+          });
+
+          timeline
+            .to(layers[0], { x: "-8%", y: "-6%", rotate: -12, duration: 0.7 }, 0)
+            .to(layers[1], { autoAlpha: 0.9, scale: 1, y: 0, rotate: 6, duration: 0.7 }, 0.2)
+            .to(cards[0], { autoAlpha: 0, y: -28, duration: 0.35 }, 0.65)
+            .to(cards[1], { autoAlpha: 1, y: 0, duration: 0.45 }, 0.76)
+            .to(layers[2], { autoAlpha: 0.95, scale: 1.03, y: -12, rotate: -2, duration: 0.75 }, 0.92)
+            .to(layers[0], { autoAlpha: 0.45, scale: 0.92, duration: 0.45 }, 1.12)
+            .to(cards[1], { autoAlpha: 0, y: -28, duration: 0.35 }, 1.45)
+            .to(cards[2], { autoAlpha: 1, y: 0, duration: 0.45 }, 1.56)
+            .to(layers, { x: 0, y: -24, rotate: 0, duration: 0.8, stagger: 0.08 }, 1.7);
+        }
+      }
+    </script>
+  </body>
 </html>
