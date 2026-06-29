@@ -110,8 +110,35 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.48);
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 700;
+}
+
+.monogram-j {
+  overflow: visible;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.monogram-j__swash,
+.monogram-j__body {
+  vector-effect: non-scaling-stroke;
+}
+
+.monogram-j--brand {
+  width: 1.8rem;
+  height: 2.1rem;
+  stroke: #f3d497;
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.15))
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.34));
+}
+
+.monogram-j--brand .monogram-j__swash {
+  stroke-width: 12;
+}
+
+.monogram-j--brand .monogram-j__body {
+  stroke-width: 14;
 }
 
 .site-nav {
@@ -687,11 +714,12 @@ p {
   transform: rotate(-22deg);
 }
 
-.wax-seal svg {
+.wax-seal > svg:not(.monogram-j) {
   position: absolute;
   z-index: 3;
-  width: 58%;
-  height: 58%;
+  top: 17%;
+  width: 48%;
+  height: 48%;
   fill: none;
   stroke: rgba(255, 218, 194, 0.78);
   filter:
@@ -702,17 +730,24 @@ p {
   stroke-width: 5.4;
 }
 
-.wax-seal__monogram {
+.monogram-j--seal {
   position: absolute;
   z-index: 3;
-  bottom: 16%;
-  color: rgba(255, 218, 194, 0.78);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-shadow:
-    0 2px 1px rgba(42, 0, 10, 0.68),
-    0 -1px 0 rgba(255, 235, 218, 0.16);
+  bottom: 13%;
+  width: 44%;
+  height: 47%;
+  stroke: rgba(255, 218, 194, 0.78);
+  filter:
+    drop-shadow(0 2px 1px rgba(42, 0, 10, 0.72))
+    drop-shadow(0 -1px 0 rgba(255, 235, 218, 0.16));
+}
+
+.monogram-j--seal .monogram-j__swash {
+  stroke-width: 13;
+}
+
+.monogram-j--seal .monogram-j__body {
+  stroke-width: 15;
 }
 
 .wax-laurel {
