@@ -110,7 +110,8 @@ const storyChapters = [
         <span>BJ</span>
       </a>
       <nav class="site-nav" aria-label="Hauptnavigation">
-        <a href="#geschichte">Geschichte</a>
+        <a href="#einladung">Einladung</a>
+        <a href="#geschichte">Momente</a>
         <a href="#besuch">Besuch</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
@@ -118,6 +119,50 @@ const storyChapters = [
     </header>
 
     <main>
+      <section class="invitation" id="einladung" aria-label="Einladung von Blumen Jelena">
+        <div class="invitation__stage">
+          <div class="invitation__grain" aria-hidden="true"></div>
+          <div class="invitation__copy" aria-hidden="true">
+            <span>Scroll</span>
+            <span>to open</span>
+          </div>
+
+          <div class="envelope-scene" aria-hidden="true">
+            <div class="envelope-shadow"></div>
+            <div class="envelope">
+              <div class="letter">
+                <p>Blumen Jelena</p>
+                <h1>Eine Geste wartet darauf, geöffnet zu werden.</h1>
+                <span>Raimundstraße 39 · Linz</span>
+              </div>
+
+              <div class="envelope__back"></div>
+              <div class="envelope__flap envelope__flap--top"></div>
+              <div class="envelope__pocket envelope__pocket--left"></div>
+              <div class="envelope__pocket envelope__pocket--right"></div>
+              <div class="envelope__pocket envelope__pocket--bottom"></div>
+
+              <div class="wax-seal">
+                <svg viewBox="0 0 100 100" role="img" aria-label="Rotes Wachssiegel mit Krone">
+                  <path class="wax-crown" d="M26 58 L30 36 L44 51 L50 29 L56 51 L70 36 L74 58 Z" />
+                  <path class="wax-crown-base" d="M29 64 H71" />
+                  <circle class="wax-crown-dot" cx="50" cy="24" r="3" />
+                </svg>
+                <span>BJ</span>
+              </div>
+
+              <span class="seal-fragment seal-fragment--one"></span>
+              <span class="seal-fragment seal-fragment--two"></span>
+              <span class="seal-fragment seal-fragment--three"></span>
+            </div>
+
+            <div class="invitation-bloom invitation-bloom--one"></div>
+            <div class="invitation-bloom invitation-bloom--two"></div>
+            <div class="invitation-bloom invitation-bloom--three"></div>
+          </div>
+        </div>
+      </section>
+
       <section class="story" id="geschichte" aria-labelledby="story-title">
         <div class="story__stage">
           <div class="story__backdrops" aria-hidden="true">
@@ -256,6 +301,74 @@ const storyChapters = [
 
       if (!prefersReducedMotion) {
         const mm = gsap.matchMedia();
+
+        gsap.set(".envelope", {
+          scale: 0.78,
+          y: 60,
+          rotateX: 10,
+          transformOrigin: "50% 50%",
+        });
+        gsap.set(".letter", { y: "23%", scale: 0.94 });
+        gsap.set(".envelope__flap--top", {
+          rotateX: 0,
+          transformPerspective: 1400,
+          transformOrigin: "50% 0%",
+        });
+        gsap.set(".invitation__copy", { autoAlpha: 0.72 });
+
+        const invitationTimeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".invitation",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+            pin: ".invitation__stage",
+            anticipatePin: 1,
+          },
+        });
+
+        invitationTimeline
+          .to(".envelope", { scale: 1, y: 0, rotateX: 0, duration: 0.65, ease: "power3.out" }, 0)
+          .to(".envelope-shadow", { scaleX: 1.18, autoAlpha: 0.78, duration: 0.65 }, 0)
+          .to(".wax-seal", { scale: 1.16, rotate: 7, duration: 0.28, ease: "power2.out" }, 0.34)
+          .to(".wax-seal", { scale: 0.42, autoAlpha: 0, x: -94, y: 86, rotate: -96, duration: 0.5, ease: "power3.in" }, 0.62)
+          .to(
+            ".seal-fragment",
+            {
+              autoAlpha: 1,
+              x: (index) => [-92, 78, -28][index] || 0,
+              y: (index) => [92, 64, 128][index] || 0,
+              rotate: (index) => [-78, 62, 118][index] || 0,
+              scale: (index) => [0.78, 0.64, 0.52][index] || 0.6,
+              duration: 0.62,
+              stagger: 0.04,
+              ease: "power3.out",
+            },
+            0.58
+          )
+          .to(".envelope__flap--top", { rotateX: -178, y: -5, duration: 0.84, ease: "power2.inOut" }, 0.76)
+          .to(".letter", { y: "-34%", scale: 1.02, duration: 0.78, ease: "power3.out" }, 1.02)
+          .to(".envelope__pocket--left", { x: "-4%", rotateZ: -2, duration: 0.52, ease: "power2.out" }, 1.12)
+          .to(".envelope__pocket--right", { x: "4%", rotateZ: 2, duration: 0.52, ease: "power2.out" }, 1.12)
+          .to(
+            ".invitation-bloom",
+            {
+              autoAlpha: 1,
+              scale: (index) => [1.28, 1.1, 1.42][index] || 1.2,
+              x: (index) => [-34, 28, 18][index] || 0,
+              y: (index) => [18, -24, 36][index] || 0,
+              rotate: (index) => [-18, 22, 42][index] || 0,
+              duration: 0.72,
+              stagger: 0.06,
+              ease: "back.out(1.8)",
+            },
+            1.18
+          )
+          .to(".letter", { y: "-74%", scale: 1.16, rotateX: 0, duration: 0.82, ease: "power3.inOut" }, 1.72)
+          .to(".envelope", { scale: 1.14, y: "8%", duration: 0.82, ease: "power2.inOut" }, 1.76)
+          .to(".invitation__copy", { autoAlpha: 0, y: 12, duration: 0.32 }, 1.84)
+          .to(".envelope-scene", { autoAlpha: 0, scale: 1.36, filter: "blur(14px)", duration: 0.58, ease: "power2.in" }, 2.45)
+          .to(".invitation__grain", { autoAlpha: 0, duration: 0.42 }, 2.52);
 
         gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
           gsap.from(element, {
