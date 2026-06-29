@@ -1,115 +1,77 @@
 ---
 import "../styles/global.css";
 
-const titleWords = ["Blumen", "Jelena"];
-
-const heroImage =
-  "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=2400&q=90";
-
 const storyChapters = [
   {
-    number: "01",
-    time: "06:38",
-    label: "Morgenlicht",
-    title: "Die Raimundstraße wird hell.",
-    text: "Noch bevor der Tag laut wird, öffnet sich der Laden. Licht fällt auf Vasen, Papier, Bänder und die ersten frischen Blüten.",
+    number: "00",
+    time: "Geburtstag",
+    label: "Freude",
+    title: "Wenn der Tag jemandem gehören soll.",
+    text: "Ein Geburtstagsstrauß sagt: Ich habe an dich gedacht. Jelena bindet ihn so, dass er nicht beliebig wirkt, sondern genau zur Person passt.",
     image:
-      "https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=1500&q=90",
+      "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=1500&q=90",
     accent: "#f2b8bd",
   },
   {
-    number: "02",
-    time: "07:15",
-    label: "Frische",
-    title: "Alles beginnt mit Auswahl.",
-    text: "Schnittblumen werden geprüft, gedreht, sortiert. Was in den Strauß kommt, muss Farbe, Haltung und Ruhe mitbringen.",
+    number: "01",
+    time: "Hochzeit",
+    label: "Ja",
+    title: "Wenn ein Ja Blumen braucht.",
+    text: "Für Hochzeit, Standesamt oder den kleinen festlichen Tisch braucht es Blumen mit Ruhe, Farbe und Haltung. Kein Standardstrauß, sondern ein Gefühl.",
     image:
-      "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=1500&q=90",
+      "https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1500&q=90",
     accent: "#e8b95e",
   },
   {
-    number: "03",
-    time: "08:40",
-    label: "Farbe",
-    title: "Aus einer Stimmung wird eine Palette.",
-    text: "Zart, mutig, leise oder festlich: Die richtige Kombination entsteht nicht durch Menge, sondern durch Gefühl für den Anlass.",
+    number: "02",
+    time: "Danke",
+    label: "Wertschätzung",
+    title: "Wenn Danke zu klein klingt.",
+    text: "Manchmal reicht eine Nachricht nicht. Ein sorgfältig gebundener Strauß macht sichtbar, dass jemand wirklich geholfen, getragen oder begleitet hat.",
     image:
-      "https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1500&q=90",
+      "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=1500&q=90",
     accent: "#d96b74",
   },
   {
-    number: "04",
-    time: "10:05",
-    label: "Form",
-    title: "Der Strauß wächst Schicht für Schicht.",
-    text: "Blüten, Grün und Höhe finden ihren Platz. Die Hand dreht, lockert, setzt Spannung, bis der Strauß lebendig aussieht.",
+    number: "03",
+    time: "Entschuldigung",
+    label: "Nähe",
+    title: "Wenn Worte allein nicht reichen.",
+    text: "Blumen lösen nicht alles, aber sie öffnen eine Tür. Jelena hilft, den Ton zu finden: ehrlich, warm und nicht zu viel.",
     image:
-      "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=1500&q=90",
+      "https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=1500&q=90",
     accent: "#c7d2a0",
   },
   {
-    number: "05",
-    time: "11:30",
-    label: "Geschenk",
-    title: "Ein kleines Detail macht es persönlich.",
-    text: "Eine Pflanze, ein Band, eine Karte oder ein liebevoller Zusatz kann aus frischen Blumen eine klare Botschaft machen.",
+    number: "04",
+    time: "Trauer",
+    label: "Stille",
+    title: "Wenn es leise und würdevoll sein muss.",
+    text: "In schweren Momenten zählt Zurückhaltung. Blumen können Trost zeigen, ohne große Worte zu verlangen.",
     image:
-      "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=1500&q=90",
+      "https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=1500&q=90",
     accent: "#d7a1c8",
   },
   {
-    number: "06",
-    time: "14:10",
-    label: "Anlass",
-    title: "Jeder Moment braucht einen anderen Ton.",
-    text: "Geburtstag, Dankeschön, Trauer, Hochzeit oder einfach nur Freitag. Jelena bindet nicht nach Vorlage, sondern nach Gefühl.",
+    number: "05",
+    time: "Zuhause",
+    label: "Ankommen",
+    title: "Wenn ein Raum leben soll.",
+    text: "Topfpflanzen und frische Blumen verändern ein Zuhause sofort: weicher, lebendiger, persönlicher. Man spürt es, bevor man es erklärt.",
     image:
-      "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=1500&q=90",
+      "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=1500&q=90",
     accent: "#f5c267",
   },
   {
-    number: "07",
-    time: "16:45",
-    label: "Weg",
-    title: "Dann geht der Strauß hinaus in die Stadt.",
-    text: "Von der Raimundstraße 39 aus wandert die kleine Geste weiter: in ein Zuhause, ein Büro, ein Fest, einen schweren Tag.",
+    number: "06",
+    time: "Einfach so",
+    label: "Liebe",
+    title: "Wenn es keinen Grund braucht.",
+    text: "Die schönsten Blumen kommen manchmal ohne Anlass. Für Freitag. Für den Heimweg. Für einen Menschen, der heute lächeln soll.",
     image:
-      "https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=1500&q=90",
+      "https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=1500&q=90",
     accent: "#9bbd8f",
   },
-  {
-    number: "08",
-    time: "18:20",
-    label: "Übergabe",
-    title: "Am Ende zählt nur dieser eine Augenblick.",
-    text: "Der Strauß wird gesehen, angenommen, verstanden. Genau dafür gibt es Blumen Jelena: für Gesten, die nicht laut sein müssen.",
-    image:
-      "https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=1500&q=90",
-    accent: "#f2b8bd",
-  },
-];
-
-const details = [
-  "Schnittblumen",
-  "Topfpflanzen",
-  "Geschenkideen",
-  "Sträuße nach Wunsch",
-];
-
-const petals = [
-  { x: 9, y: 18, size: 1.1, color: "#f2b8bd", turn: -18 },
-  { x: 20, y: 11, size: 0.82, color: "#f5c267", turn: 24 },
-  { x: 37, y: 21, size: 1, color: "#d96b74", turn: -34 },
-  { x: 52, y: 14, size: 0.72, color: "#c7d2a0", turn: 19 },
-  { x: 68, y: 26, size: 1.28, color: "#f2b8bd", turn: 48 },
-  { x: 86, y: 16, size: 0.84, color: "#f5c267", turn: -27 },
-  { x: 15, y: 49, size: 0.76, color: "#d7a1c8", turn: 38 },
-  { x: 35, y: 62, size: 1.2, color: "#fff0d6", turn: -10 },
-  { x: 64, y: 57, size: 0.92, color: "#f2b8bd", turn: 31 },
-  { x: 91, y: 47, size: 1.06, color: "#d96b74", turn: -43 },
-  { x: 13, y: 77, size: 0.92, color: "#f5c267", turn: 29 },
-  { x: 49, y: 84, size: 1.02, color: "#c7d2a0", turn: -25 },
-  { x: 77, y: 80, size: 0.78, color: "#fff0d6", turn: 13 },
 ];
 ---
 
@@ -142,44 +104,6 @@ const petals = [
     </header>
 
     <main>
-      <section class="hero" style={`--hero-image: url("${heroImage}")`}>
-        <div class="hero__media" aria-hidden="true"></div>
-        <div class="hero__shade" aria-hidden="true"></div>
-        <div class="petal-field" aria-hidden="true">
-          {petals.map((petal) => (
-            <span
-              class="petal"
-              style={`--x:${petal.x}%; --y:${petal.y}%; --size:${petal.size}rem; --petal-color:${petal.color}; --turn:${petal.turn}deg;`}
-            />
-          ))}
-        </div>
-
-        <div class="hero__content">
-          <p class="eyebrow hero__eyebrow">Blumenladen in Linz · Raimundstraße 39</p>
-          <h1 class="hero-title" aria-label="Blumen Jelena">
-            {titleWords.map((word) => (
-              <span class="hero-title__word">
-                {[...word].map((letter) => (
-                  <span class="hero-char">{letter}</span>
-                ))}
-              </span>
-            ))}
-          </h1>
-          <p class="hero__lead">
-            Kein Katalog. Ein Tag im Laden. Eine Geschichte darüber, wie aus
-            frischen Blumen eine persönliche Geste wird.
-          </p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="#geschichte">Geschichte starten</a>
-            <a class="button button--ghost" href="tel:+436765882700">Anrufen</a>
-          </div>
-        </div>
-
-        <aside class="hero__note" aria-label="Angebot">
-          {details.map((detail) => <span>{detail}</span>)}
-        </aside>
-      </section>
-
       <section class="story" id="geschichte" aria-labelledby="story-title">
         <div class="story__stage">
           <div class="story__backdrops" aria-hidden="true">
@@ -193,11 +117,11 @@ const petals = [
 
           <div class="story__interface">
             <div class="story-progress" aria-hidden="true">
-              <span class="story-progress__time">06:38</span>
+              <span class="story-progress__time">Geburtstag</span>
               <span class="story-progress__line">
                 <span class="story-progress__fill"></span>
               </span>
-              <span class="story-progress__count">01 / 08</span>
+              <span class="story-progress__count">00 / 06</span>
             </div>
 
             <div class="story__visual" aria-hidden="true">
@@ -226,13 +150,14 @@ const petals = [
             </div>
 
             <div class="story__copy">
-              <p class="eyebrow">Ein Tag bei Blumen Jelena</p>
-              <h2 id="story-title">Scroll durch die Geste.</h2>
+              <p class="eyebrow">Blumen Jelena · Linz</p>
+              <h2 id="story-title">Warum du Blumen brauchst.</h2>
 
               <div class="story-cards">
                 {storyChapters.map((chapter, index) => (
                   <article
                     class={`story-card ${index === 0 ? "is-active" : ""}`}
+                    data-number={chapter.number}
                     data-time={chapter.time}
                     data-label={chapter.label}
                   >
@@ -316,69 +241,6 @@ const petals = [
       if (!prefersReducedMotion) {
         const mm = gsap.matchMedia();
 
-        gsap.set(".hero-char", {
-          autoAlpha: 0,
-          yPercent: 110,
-          rotateX: -64,
-          transformOrigin: "50% 100%",
-        });
-
-        gsap
-          .timeline({ defaults: { ease: "power4.out" } })
-          .to(".hero-char", {
-            autoAlpha: 1,
-            yPercent: 0,
-            rotateX: 0,
-            duration: 1.1,
-            stagger: 0.035,
-          })
-          .from(
-            [".hero__eyebrow", ".hero__lead", ".hero__actions", ".hero__note"],
-            {
-              autoAlpha: 0,
-              y: 32,
-              duration: 0.9,
-              stagger: 0.1,
-            },
-            "-=0.55"
-          )
-          .from(
-            ".petal",
-            {
-              autoAlpha: 0,
-              scale: 0,
-              y: 44,
-              duration: 0.75,
-              stagger: 0.03,
-            },
-            "-=0.6"
-          );
-
-        gsap.to(".hero__media", {
-          scale: 1.14,
-          yPercent: 12,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".hero",
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-
-        gsap.utils.toArray<HTMLElement>(".petal").forEach((petal, index) => {
-          gsap.to(petal, {
-            x: gsap.utils.random(-34, 34),
-            y: gsap.utils.random(-46, 46),
-            rotate: gsap.utils.random(-42, 42),
-            duration: gsap.utils.random(4.5, 8.5),
-            delay: index * 0.04,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut",
-          });
-        });
-
         gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((element) => {
           gsap.from(element, {
             autoAlpha: 0,
@@ -423,7 +285,8 @@ const petals = [
             }
 
             if (count) {
-              count.textContent = `${String(scene + 1).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`;
+              const lastNumber = cards[cards.length - 1]?.dataset.number || "06";
+              count.textContent = `${card.dataset.number || "00"} / ${lastNumber}`;
             }
 
             dots.forEach((dot, dotIndex) => {
