@@ -7,28 +7,6 @@ import { contactDetails } from "../../data/site";
     <p class="eyebrow">Kontakt</p>
     <h2 id="contact-title">{contactDetails.name}</h2>
   </div>
-  <div class="contact__proof" data-reveal>
-    <span>
-      <strong>Raimundstraße 39</strong>
-      <small>Direkt in Linz</small>
-    </span>
-    <span>
-      <strong>Persönlich gebunden</strong>
-      <small>Für Anlass und Mensch</small>
-    </span>
-    <span>
-      <strong>Schneller Kontakt</strong>
-      <small>Anruf, Mail oder Route</small>
-    </span>
-  </div>
-  <div class="contact-actions" data-reveal>
-    <a class="contact-action contact-action--primary" href={contactDetails.phoneHref}>
-      Jetzt anrufen
-    </a>
-    <a class="contact-action" href={contactDetails.mapsHref}>
-      Route planen
-    </a>
-  </div>
   <div class="contact__grid">
     <a class="contact-tile" href={contactDetails.mapsHref} data-reveal>
       <span>Adresse</span>

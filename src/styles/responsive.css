@@ -133,10 +133,6 @@
   .contact__grid {
     grid-template-columns: 1fr;
   }
-
-  .contact__proof {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 640px) {
@@ -240,11 +236,6 @@
   .contact {
     padding-top: 5rem;
     padding-bottom: 5rem;
-  }
-
-  .contact-actions {
-    display: grid;
-    grid-template-columns: 1fr;
   }
 
   .contact-tile {
