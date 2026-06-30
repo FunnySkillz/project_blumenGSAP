@@ -23,6 +23,8 @@ if (!prefersReducedMotion) {
     transformOrigin: "50% 0%",
   });
   gsap.set(".invitation__copy", { autoAlpha: 0.72 });
+  gsap.set(".invitation-handoff", { autoAlpha: 0 });
+  gsap.set(".invitation-handoff__bloom", { autoAlpha: 0, scale: 0.58, y: 38 });
 
   const invitationTimeline = gsap.timeline({
     scrollTrigger: {
@@ -75,6 +77,20 @@ if (!prefersReducedMotion) {
     .to(".letter", { y: "-74%", scale: 1.16, rotateX: 0, duration: 0.82, ease: "power3.inOut" }, 1.72)
     .to(".envelope", { scale: 1.14, y: "8%", duration: 0.82, ease: "power2.inOut" }, 1.76)
     .to(".invitation__copy", { autoAlpha: 0, y: 12, duration: 0.32 }, 1.84)
+    .to(".invitation-handoff", { autoAlpha: 1, duration: 0.74, ease: "power2.out" }, 2.12)
+    .to(
+      ".invitation-handoff__bloom",
+      {
+        autoAlpha: 1,
+        scale: (index: number) => [1.16, 0.98, 1.28][index] || 1,
+        y: (index: number) => [-10, 18, -18][index] || 0,
+        rotate: (index: number) => [18, -14, 32][index] || 0,
+        duration: 0.78,
+        stagger: 0.08,
+        ease: "power3.out",
+      },
+      2.16
+    )
     .to(".envelope-scene", { autoAlpha: 0, scale: 1.36, filter: "blur(14px)", duration: 0.58, ease: "power2.in" }, 2.45)
     .to(".invitation__grain", { autoAlpha: 0, duration: 0.42 }, 2.52);
 
@@ -138,6 +154,18 @@ if (!prefersReducedMotion) {
 
       dots.forEach((dot, dotIndex) => {
         dot.classList.toggle("is-active", dotIndex === scene);
+      });
+
+      cards.forEach((storyCard, cardIndex) => {
+        storyCard.classList.toggle("is-active", cardIndex === scene);
+      });
+
+      media.forEach((mediaElement, mediaIndex) => {
+        mediaElement.classList.toggle("is-active", mediaIndex === scene);
+      });
+
+      backdrops.forEach((backdrop, backdropIndex) => {
+        backdrop.classList.toggle("is-active", backdropIndex === scene);
       });
 
       if (kicker && headline) {
@@ -247,6 +275,61 @@ if (!prefersReducedMotion) {
 
     return () => {
       storyTimeline.kill();
+    };
+  });
+
+  mm.add("(max-width: 900px)", () => {
+    const cards = gsap.utils.toArray<HTMLElement>(".story-card");
+    const dots = gsap.utils.toArray<HTMLElement>("[data-story-dot]");
+    const time = document.querySelector<HTMLElement>(".story-progress__time");
+    const count = document.querySelector<HTMLElement>(".story-progress__count");
+    const fill = document.querySelector<HTMLElement>(".story-progress__fill");
+
+    if (cards.length === 0) {
+      return;
+    }
+
+    const setScene = (index: number) => {
+      const scene = Math.max(0, Math.min(index, cards.length - 1));
+      const card = cards[scene];
+      const lastNumber = cards[cards.length - 1]?.dataset.number || "06";
+
+      cards.forEach((storyCard, cardIndex) => {
+        storyCard.classList.toggle("is-active", cardIndex === scene);
+      });
+
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle("is-active", dotIndex === scene);
+      });
+
+      if (time) {
+        time.textContent = card.dataset.time || "";
+      }
+
+      if (count) {
+        count.textContent = `${card.dataset.number || "00"} / ${lastNumber}`;
+      }
+
+      if (fill) {
+        const denominator = Math.max(1, cards.length - 1);
+        gsap.set(fill, { scaleX: scene / denominator });
+      }
+    };
+
+    setScene(0);
+
+    const triggers = cards.map((card, index) =>
+      ScrollTrigger.create({
+        trigger: card,
+        start: "top 58%",
+        end: "bottom 42%",
+        onEnter: () => setScene(index),
+        onEnterBack: () => setScene(index),
+      })
+    );
+
+    return () => {
+      triggers.forEach((trigger) => trigger.kill());
     };
   });
 

@@ -65,9 +65,24 @@
     padding-bottom: 5rem;
   }
 
-  .story-progress,
   .story__visual {
     display: none;
+  }
+
+  .story-progress {
+    position: sticky;
+    top: 4.85rem;
+    right: auto;
+    left: auto;
+    z-index: 8;
+    grid-template-columns: minmax(6.5rem, auto) 1fr auto;
+    margin-bottom: 1.5rem;
+    padding: 0.85rem 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background: rgba(17, 28, 22, 0.76);
+    box-shadow: 0 18px 52px rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(16px);
   }
 
   .story__copy {
@@ -93,6 +108,10 @@
     filter: none;
   }
 
+  .story-card.is-active {
+    border-color: rgba(255, 255, 255, 0.52);
+  }
+
   .story-card img {
     display: block;
     width: 100%;
@@ -112,6 +131,10 @@
   }
 
   .contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__proof {
     grid-template-columns: 1fr;
   }
 }
@@ -138,7 +161,15 @@
   }
 
   .invitation__copy {
-    display: none;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    justify-content: center;
+    padding: 0.72rem 0.84rem;
+    border: 1px solid rgba(16, 27, 21, 0.14);
+    border-radius: 999px;
+    background: rgba(255, 253, 248, 0.32);
+    backdrop-filter: blur(10px);
   }
 
   .envelope {
@@ -183,6 +214,16 @@
     padding-bottom: 4rem;
   }
 
+  .story-progress {
+    top: 4.4rem;
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .story-progress__count {
+    justify-self: start;
+  }
+
   .story-card {
     padding: 1rem;
   }
@@ -199,6 +240,11 @@
   .contact {
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  .contact-actions {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .contact-tile {
@@ -225,7 +271,8 @@
 
   .wax-seal,
   .seal-fragment,
-  .invitation__copy {
+  .invitation__copy,
+  .invitation-handoff {
     display: none;
   }
 

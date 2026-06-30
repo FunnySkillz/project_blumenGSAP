@@ -60,12 +60,28 @@
   right: 2rem;
   left: 2rem;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: minmax(8rem, auto) 1fr auto;
   align-items: center;
   gap: 1rem;
   color: rgba(255, 255, 255, 0.84);
   font-size: 0.8rem;
   font-weight: 850;
+}
+
+.story-progress__meta {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.story-progress__label {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.64rem;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.story-progress__time {
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .story-progress__line {
@@ -287,6 +303,18 @@
   color: #fff;
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(18px);
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.story-card.is-active {
+  border-color: rgba(255, 255, 255, 0.46);
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 22px 70px rgba(0, 0, 0, 0.24),
+    inset 0 0 0 1px rgba(244, 198, 194, 0.12);
 }
 
 .story-card img {

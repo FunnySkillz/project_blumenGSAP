@@ -75,13 +75,79 @@
   position: absolute;
   right: 2rem;
   bottom: 2rem;
-  display: grid;
-  gap: 0.2rem;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   color: rgba(16, 27, 21, 0.54);
   font-size: 0.78rem;
   font-weight: 850;
-  text-align: right;
   text-transform: uppercase;
+}
+
+.invitation__copy-line {
+  display: block;
+  width: 3.2rem;
+  height: 1px;
+  overflow: hidden;
+  background: rgba(16, 27, 21, 0.26);
+}
+
+.invitation__copy-line::after {
+  display: block;
+  width: 42%;
+  height: 100%;
+  background: rgba(16, 27, 21, 0.7);
+  content: "";
+  animation: cue-slide 1.55s ease-in-out infinite;
+}
+
+.invitation-handoff {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 64%, rgba(217, 107, 116, 0.22), transparent 18rem),
+    radial-gradient(circle at 24% 24%, rgba(199, 210, 160, 0.24), transparent 16rem),
+    linear-gradient(180deg, transparent 0%, rgba(16, 27, 21, 0.7) 74%, var(--forest) 100%);
+  opacity: 0;
+}
+
+.invitation-handoff__bloom {
+  position: absolute;
+  width: 18rem;
+  aspect-ratio: 1;
+  border-radius: 50% 42% 56% 44%;
+  background:
+    radial-gradient(circle at 35% 31%, rgba(255, 253, 248, 0.34), transparent 16%),
+    radial-gradient(circle at 50% 50%, rgba(217, 107, 116, 0.42), transparent 58%);
+  filter: blur(1px);
+  opacity: 0.72;
+  transform: scale(0.72);
+}
+
+.invitation-handoff__bloom--one {
+  right: 6%;
+  bottom: -5rem;
+}
+
+.invitation-handoff__bloom--two {
+  bottom: 12%;
+  left: 4%;
+  width: 13rem;
+  background:
+    radial-gradient(circle at 36% 30%, rgba(255, 253, 248, 0.22), transparent 16%),
+    radial-gradient(circle at 50% 50%, rgba(199, 210, 160, 0.38), transparent 58%);
+}
+
+.invitation-handoff__bloom--three {
+  top: 10%;
+  right: 18%;
+  width: 9rem;
+  background:
+    radial-gradient(circle at 36% 30%, rgba(255, 253, 248, 0.28), transparent 16%),
+    radial-gradient(circle at 50% 50%, rgba(232, 185, 94, 0.36), transparent 58%);
 }
 
 .envelope-scene {
@@ -424,4 +490,15 @@
   right: 15%;
   width: 4.6rem;
   background: rgba(232, 185, 94, 0.42);
+}
+
+@keyframes cue-slide {
+  0%,
+  100% {
+    transform: translateX(-120%);
+  }
+
+  50% {
+    transform: translateX(240%);
+  }
 }
