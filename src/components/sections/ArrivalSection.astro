@@ -1,0 +1,14 @@
+---
+import { arrivalSection } from "../../data/site";
+---
+
+<section class="arrival" id="besuch" aria-labelledby="arrival-title">
+  <div class="arrival__image" data-reveal>
+    <img src={arrivalSection.image} alt={arrivalSection.imageAlt} loading="lazy" />
+  </div>
+  <div class="arrival__content" data-reveal>
+    <p class="eyebrow">{arrivalSection.eyebrow}</p>
+    <h2 id="arrival-title">{arrivalSection.title}</h2>
+    <p>{arrivalSection.text}</p>
+  </div>
+</section>

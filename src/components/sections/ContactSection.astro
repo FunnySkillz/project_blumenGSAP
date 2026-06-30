@@ -1,0 +1,24 @@
+---
+import { contactDetails } from "../../data/site";
+---
+
+<section class="contact" id="kontakt" aria-labelledby="contact-title">
+  <div class="contact__heading" data-reveal>
+    <p class="eyebrow">Kontakt</p>
+    <h2 id="contact-title">{contactDetails.name}</h2>
+  </div>
+  <div class="contact__grid">
+    <a class="contact-tile" href={contactDetails.mapsHref} data-reveal>
+      <span>Adresse</span>
+      <strong>{contactDetails.addressLines[0]}<br />{contactDetails.addressLines[1]}</strong>
+    </a>
+    <a class="contact-tile" href={contactDetails.phoneHref} data-reveal>
+      <span>Telefon</span>
+      <strong>{contactDetails.phone}</strong>
+    </a>
+    <a class="contact-tile" href={contactDetails.emailHref} data-reveal>
+      <span>E-Mail</span>
+      <strong>{contactDetails.email}</strong>
+    </a>
+  </div>
+</section>

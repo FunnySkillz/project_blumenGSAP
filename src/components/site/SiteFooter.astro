@@ -1,0 +1,10 @@
+---
+import { contactDetails } from "../../data/site";
+
+const address = contactDetails.addressLines.join(" · ");
+---
+
+<footer class="site-footer">
+  <p>{contactDetails.name} · {address}</p>
+  <a href={contactDetails.emailHref}>{contactDetails.email}</a>
+</footer>

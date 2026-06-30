@@ -1,0 +1,98 @@
+---
+import type { StoryChapter } from "../../data/storyChapters";
+
+interface Props {
+  chapters: StoryChapter[];
+}
+
+const { chapters } = Astro.props;
+const firstChapter = chapters[0];
+---
+
+<section class="story" id="geschichte" aria-labelledby="story-title">
+  <div class="story__stage">
+    <div class="story__backdrops" aria-hidden="true">
+      {
+        chapters.map((chapter, index) => (
+          <div
+            class={`story-backdrop ${index === 0 ? "is-active" : ""}`}
+            style={`--scene-image: url("${chapter.image}"); --accent: ${chapter.accent};`}
+          />
+        ))
+      }
+    </div>
+
+    <div class="story__interface">
+      <div class="story-progress" aria-hidden="true">
+        <span class="story-progress__time">{firstChapter.time}</span>
+        <span class="story-progress__line">
+          <span class="story-progress__fill"></span>
+        </span>
+        <span class="story-progress__count">{firstChapter.number} / {chapters.at(-1)?.number}</span>
+      </div>
+
+      <div class="story__visual" aria-hidden="true">
+        <div class="story-orbit">
+          <span class="orbit-ring orbit-ring--outer"></span>
+          <span class="orbit-ring orbit-ring--middle"></span>
+          <span class="orbit-ring orbit-ring--inner"></span>
+        </div>
+
+        <svg class="story-route" viewBox="0 0 620 620">
+          <path d="M80 500 C118 360 210 370 226 250 C242 132 355 132 382 230 C410 332 540 318 548 142" />
+        </svg>
+
+        {
+          chapters.map((chapter, index) => (
+            <figure
+              class={`story-media story-media--${index + 1} ${index === 0 ? "is-active" : ""}`}
+              style={`--scene-image: url("${chapter.image}"); --accent: ${chapter.accent};`}
+            >
+              <span>{chapter.number}</span>
+            </figure>
+          ))
+        }
+
+        <div class="story-object story-object--door"></div>
+        <div class="story-object story-object--wrap"></div>
+        <div class="story-object story-object--tag"></div>
+      </div>
+
+      <div class="story__copy">
+        <p class="eyebrow story-kicker">{firstChapter.kicker}</p>
+        <h2 id="story-title">{firstChapter.headline}</h2>
+
+        <div class="story-cards">
+          {
+            chapters.map((chapter, index) => (
+              <article
+                class={`story-card ${index === 0 ? "is-active" : ""}`}
+                data-number={chapter.number}
+                data-time={chapter.time}
+                data-label={chapter.label}
+                data-kicker={chapter.kicker}
+                data-headline={chapter.headline}
+              >
+                <img src={chapter.image} alt="" loading={index === 0 ? "eager" : "lazy"} />
+                <span>{chapter.number}</span>
+                <p>{chapter.time} · {chapter.label}</p>
+                <h3>{chapter.title}</h3>
+                <div>{chapter.text}</div>
+              </article>
+            ))
+          }
+        </div>
+
+        <div class="story-dots" aria-hidden="true">
+          {
+            chapters.map((chapter, index) => (
+              <span class={index === 0 ? "is-active" : ""} data-story-dot={index}>
+                {chapter.number}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

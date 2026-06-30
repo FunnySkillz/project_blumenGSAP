@@ -1,0 +1,23 @@
+---
+import Monogram from "./Monogram.astro";
+---
+
+<div class="wax-seal">
+  <span class="wax-seal__drip wax-seal__drip--one"></span>
+  <span class="wax-seal__drip wax-seal__drip--two"></span>
+  <span class="wax-seal__drip wax-seal__drip--three"></span>
+  <span class="wax-seal__rim"></span>
+  <span class="wax-seal__stamp"></span>
+  <span class="wax-seal__shine"></span>
+  <svg viewBox="0 0 100 100" role="img" aria-label="Rotes Wachssiegel mit Krone">
+    <path class="wax-crown" d="M22 57 L27 32 L41 49 L50 23 L59 49 L73 32 L78 57 Z" />
+    <path class="wax-crown-base" d="M27 63 H73" />
+    <path class="wax-crown-base" d="M32 70 H68" />
+    <circle class="wax-crown-dot" cx="50" cy="18" r="3" />
+    <circle class="wax-crown-dot" cx="27" cy="29" r="2.5" />
+    <circle class="wax-crown-dot" cx="73" cy="29" r="2.5" />
+    <path class="wax-laurel wax-laurel--left" d="M27 77 C18 69 15 56 18 44" />
+    <path class="wax-laurel wax-laurel--right" d="M73 77 C82 69 85 56 82 44" />
+  </svg>
+  <Monogram variant="seal" />
+</div>
