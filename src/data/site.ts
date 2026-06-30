@@ -1,3 +1,5 @@
+import arrivalImageUrl from "../assets/images/flower-shop-bouquet-handoff.jpg?url";
+
 export const siteMeta = {
   title: "Blumen Jelena | Eine Blumengeschichte aus Linz",
   description:
@@ -28,7 +30,6 @@ export const arrivalSection = {
   title: "Komm vorbei, wenn der Moment Blumen braucht.",
   text:
     "Blumen Jelena e.U. ist in der Raimundstraße 39 in 4020 Linz. Für frische Schnittblumen, Topfpflanzen und kleine Geschenkideen ist ein direkter Anruf oft der schnellste Weg.",
-  image:
-    "https://images.unsplash.com/photo-1509719662289-0d4b4f2ea278?auto=format&fit=crop&w=1500&q=90",
-  imageAlt: "Blumen in warmem Licht",
+  image: arrivalImageUrl,
+  imageAlt: "Floristin übergibt einen frischen Blumenstrauß",
 };

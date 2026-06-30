@@ -8,6 +8,10 @@ Use this folder for source-controlled assets that Astro should process and finge
 
 Keep files that must be served verbatim, such as favicons, in `public/`.
 
+Current placeholder stock assets:
+
+- `images/flower-shop-bouquet-handoff.jpg`: temporary arrival-section image from Unsplash by Ritupon Baishya, used under the Unsplash License. Replace with a real Blumen Jelena owner/shop photo when available.
+
 ## Site Experience TODO
 
 ### Priority 1 - Hook and clarity
