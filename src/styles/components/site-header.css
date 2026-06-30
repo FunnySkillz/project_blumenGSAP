@@ -1,0 +1,48 @@
+.site-header {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.35rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(12, 22, 16, 0.5);
+  color: #fff;
+  backdrop-filter: blur(18px);
+}
+
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.4rem;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.site-nav a,
+.header-cta {
+  transition:
+    color 180ms ease,
+    transform 180ms ease,
+    border-color 180ms ease;
+}
+
+.site-nav a:hover,
+.header-cta:hover {
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.header-cta {
+  padding: 0.72rem 0.86rem;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.86rem;
+  font-weight: 780;
+}

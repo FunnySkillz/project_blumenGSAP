@@ -1,0 +1,213 @@
+.brand-mark {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.monogram-j {
+  overflow: visible;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.monogram-j__swash,
+.monogram-j__body {
+  vector-effect: non-scaling-stroke;
+}
+
+.monogram-j--brand {
+  width: 1.8rem;
+  height: 2.1rem;
+  stroke: #f3d497;
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.15))
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.34));
+}
+
+.monogram-j--brand .monogram-j__swash {
+  stroke-width: 12;
+}
+
+.monogram-j--brand .monogram-j__body {
+  stroke-width: 14;
+}
+
+.wax-seal {
+  position: absolute;
+  z-index: 8;
+  top: 47%;
+  left: 50%;
+  display: grid;
+  width: clamp(6.4rem, 12vw, 9.4rem);
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 48% 52% 47% 53% / 54% 48% 52% 46%;
+  background:
+    radial-gradient(circle at 33% 24%, rgba(255, 194, 176, 0.45), transparent 18%),
+    radial-gradient(circle at 58% 64%, rgba(70, 0, 15, 0.46), transparent 36%),
+    radial-gradient(circle at 44% 44%, #b51b31 0 38%, #98172b 58%, #6d0d1d 100%);
+  border: 1px solid rgba(84, 0, 17, 0.42);
+  box-shadow:
+    0 22px 38px rgba(54, 0, 13, 0.42),
+    0 4px 8px rgba(48, 18, 8, 0.28),
+    inset 7px 8px 13px rgba(255, 212, 196, 0.16),
+    inset -10px -12px 18px rgba(54, 0, 13, 0.42),
+    inset 0 0 0 6px rgba(255, 210, 186, 0.035);
+  transform: translate(-50%, -50%);
+}
+
+.wax-seal::before,
+.wax-seal::after {
+  position: absolute;
+  z-index: -1;
+  border-radius: 45% 55% 48% 52%;
+  background:
+    radial-gradient(circle at 38% 24%, rgba(255, 190, 170, 0.24), transparent 30%),
+    linear-gradient(145deg, #a8172c, #760f20);
+  box-shadow:
+    inset 3px 4px 8px rgba(255, 220, 198, 0.12),
+    inset -5px -6px 10px rgba(48, 0, 12, 0.32);
+  content: "";
+}
+
+.wax-seal::before {
+  right: -8%;
+  bottom: 2%;
+  width: 40%;
+  height: 40%;
+}
+
+.wax-seal::after {
+  top: -4%;
+  left: -8%;
+  width: 34%;
+  height: 34%;
+}
+
+.wax-seal__drip,
+.wax-seal__rim,
+.wax-seal__stamp,
+.wax-seal__shine {
+  position: absolute;
+  pointer-events: none;
+}
+
+.wax-seal__drip {
+  z-index: -1;
+  border-radius: 45% 55% 56% 44%;
+  background:
+    radial-gradient(circle at 34% 24%, rgba(255, 194, 176, 0.2), transparent 32%),
+    linear-gradient(160deg, #a8172c, #6b0c1c);
+  box-shadow:
+    inset 3px 3px 8px rgba(255, 220, 198, 0.1),
+    inset -4px -6px 10px rgba(48, 0, 12, 0.34);
+}
+
+.wax-seal__drip--one {
+  top: 4%;
+  right: 4%;
+  width: 29%;
+  height: 22%;
+  transform: rotate(24deg);
+}
+
+.wax-seal__drip--two {
+  right: -4%;
+  bottom: 16%;
+  width: 28%;
+  height: 34%;
+  transform: rotate(-20deg);
+}
+
+.wax-seal__drip--three {
+  bottom: -5%;
+  left: 30%;
+  width: 28%;
+  height: 24%;
+  transform: rotate(9deg);
+}
+
+.wax-seal__rim {
+  z-index: 1;
+  inset: 11%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 26%, rgba(255, 220, 198, 0.18), transparent 22%),
+    linear-gradient(145deg, rgba(111, 10, 28, 0.92), rgba(174, 28, 48, 0.5));
+  box-shadow:
+    inset 4px 5px 8px rgba(255, 225, 205, 0.16),
+    inset -5px -6px 10px rgba(50, 0, 13, 0.4),
+    0 2px 3px rgba(255, 225, 205, 0.08);
+}
+
+.wax-seal__stamp {
+  z-index: 2;
+  inset: 20%;
+  border: 1px solid rgba(255, 218, 194, 0.22);
+  border-radius: 48% 52% 50% 50%;
+  background:
+    radial-gradient(circle at 38% 26%, rgba(255, 230, 212, 0.12), transparent 26%),
+    radial-gradient(circle at 64% 76%, rgba(45, 0, 10, 0.28), transparent 34%),
+    rgba(92, 7, 22, 0.4);
+  box-shadow:
+    inset 5px 6px 10px rgba(44, 0, 11, 0.55),
+    inset -4px -5px 8px rgba(255, 207, 184, 0.1),
+    0 1px 1px rgba(255, 225, 205, 0.1);
+}
+
+.wax-seal__shine {
+  z-index: 4;
+  top: 16%;
+  left: 23%;
+  width: 33%;
+  height: 16%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255, 226, 210, 0.5), transparent 68%);
+  filter: blur(1px);
+  transform: rotate(-22deg);
+}
+
+.wax-seal > svg:not(.monogram-j) {
+  position: absolute;
+  z-index: 3;
+  top: 17%;
+  width: 48%;
+  height: 48%;
+  fill: none;
+  stroke: rgba(255, 218, 194, 0.78);
+  filter:
+    drop-shadow(0 2px 1px rgba(42, 0, 10, 0.65))
+    drop-shadow(0 -1px 0 rgba(255, 235, 218, 0.16));
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 5.4;
+}
+
+.monogram-j--seal {
+  position: absolute;
+  z-index: 3;
+  bottom: 13%;
+  width: 44%;
+  height: 47%;
+  stroke: rgba(255, 218, 194, 0.78);
+  filter:
+    drop-shadow(0 2px 1px rgba(42, 0, 10, 0.72))
+    drop-shadow(0 -1px 0 rgba(255, 235, 218, 0.16));
+}
+
+.monogram-j--seal .monogram-j__swash {
+  stroke-width: 13;
+}
+
+.monogram-j--seal .monogram-j__body {
+  stroke-width: 15;
+}
+
+.wax-laurel {
+  stroke-width: 3;
+}

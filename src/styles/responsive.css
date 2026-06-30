@@ -1,0 +1,240 @@
+@media (max-width: 1100px) {
+  .story__interface {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .story__visual {
+    min-height: 540px;
+  }
+
+  .story__copy {
+    min-height: 430px;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  h2 {
+    font-size: 2.75rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  .site-header {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .invitation {
+    min-height: 260svh;
+  }
+
+  .envelope-scene {
+    width: 96vw;
+    min-height: 62svh;
+  }
+
+  .letter {
+    padding: 2rem;
+  }
+
+  .letter h1 {
+    font-size: 3rem;
+  }
+
+  .story {
+    min-height: auto;
+    background: var(--forest);
+  }
+
+  .story__stage {
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .story__interface {
+    min-height: auto;
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+  }
+
+  .story-progress,
+  .story__visual {
+    display: none;
+  }
+
+  .story__copy {
+    min-height: auto;
+  }
+
+  .story__copy h2 {
+    max-width: 680px;
+  }
+
+  .story-cards {
+    display: grid;
+    min-height: auto;
+    gap: 1rem;
+  }
+
+  .story-card {
+    position: relative;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    filter: none;
+  }
+
+  .story-card img {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .story-dots {
+    display: none;
+  }
+
+  .arrival {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    padding: 0.75rem 0.9rem;
+  }
+
+  .brand-mark {
+    width: 2.65rem;
+    height: 2.65rem;
+  }
+
+  .header-cta {
+    max-width: 12rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .invitation__stage {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .invitation__copy {
+    display: none;
+  }
+
+  .envelope {
+    width: 96vw;
+  }
+
+  .letter {
+    width: 86%;
+    height: 74%;
+    padding: 1.15rem;
+  }
+
+  .letter h1 {
+    font-size: 2.1rem;
+  }
+
+  .letter span {
+    font-size: 0.82rem;
+  }
+
+  .wax-seal {
+    width: 5.4rem;
+  }
+
+  .story__interface,
+  .arrival,
+  .contact {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  h2 {
+    font-size: 2.22rem;
+  }
+
+  h3 {
+    font-size: 1.74rem;
+  }
+
+  .story__interface {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+
+  .story-card {
+    padding: 1rem;
+  }
+
+  .arrival {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .arrival__image img {
+    min-height: 390px;
+  }
+
+  .contact {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .contact-tile {
+    min-height: 10rem;
+  }
+
+  .site-footer {
+    padding: 1.4rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .invitation {
+    min-height: 100svh;
+  }
+
+  .letter {
+    transform: translateY(-52%) scale(1);
+  }
+
+  .envelope__flap--top {
+    transform: rotateX(-178deg);
+  }
+
+  .wax-seal,
+  .seal-fragment,
+  .invitation__copy {
+    display: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
