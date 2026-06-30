@@ -9,32 +9,24 @@
 }
 
 .monogram-j {
-  overflow: visible;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.monogram-j__swash,
-.monogram-j__body {
-  vector-effect: non-scaling-stroke;
+  display: inline-grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .monogram-j--brand {
-  width: 1.8rem;
-  height: 2.1rem;
-  stroke: #f3d497;
-  filter:
-    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.15))
-    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.34));
+  width: 2.28rem;
+  height: 2.28rem;
+  background: #fffdf8;
 }
 
-.monogram-j--brand .monogram-j__swash {
-  stroke-width: 12;
-}
-
-.monogram-j--brand .monogram-j__body {
-  stroke-width: 14;
+.monogram-j img {
+  width: 164%;
+  max-width: none;
+  height: 164%;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .wax-seal {

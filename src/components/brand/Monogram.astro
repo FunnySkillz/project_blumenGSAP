@@ -1,4 +1,6 @@
 ---
+import vintageJUrl from "../../assets/brand/j-simple-vintage.png?url";
+
 interface Props {
   variant: "brand" | "seal";
   ariaLabel?: string;
@@ -8,13 +10,11 @@ const { variant, ariaLabel } = Astro.props;
 const className = `monogram-j monogram-j--${variant}`;
 ---
 
-<svg
+<span
   class={className}
-  viewBox="0 0 120 140"
   role={ariaLabel ? "img" : undefined}
   aria-label={ariaLabel}
   aria-hidden={ariaLabel ? undefined : "true"}
 >
-  <path class="monogram-j__swash" d="M20 34 C44 14 84 15 103 28 C84 39 61 36 50 34" />
-  <path class="monogram-j__body" d="M63 31 C64 54 63 80 57 101 C49 128 14 126 18 102 C20 90 29 84 37 83" />
-</svg>
+  <img src={vintageJUrl} alt="" loading="eager" decoding="async" />
+</span>
