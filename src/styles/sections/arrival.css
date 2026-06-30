@@ -1,0 +1,33 @@
+.arrival {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.78fr);
+  gap: 4rem;
+  align-items: center;
+  padding: 7rem 2rem;
+  background: var(--paper);
+}
+
+.arrival__image {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+.arrival__image img {
+  width: 100%;
+  min-height: 620px;
+  object-fit: cover;
+}
+
+.arrival__content {
+  max-width: 660px;
+}
+
+.arrival__content h2 {
+  color: var(--forest);
+}
+
+.arrival__content p:last-child {
+  color: var(--soft-ink);
+  font-size: 1.08rem;
+}
